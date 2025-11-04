@@ -5,52 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J.U.N.E.</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/ico" href="J.U.N.E.ico" />
+  <link rel="icon" type="Assets/ico" href="J.U.N.E.ico" />
 </head>
 <body>
-  <header class="site-header">
-    <img src="Assets/J.U.N.E.ico" alt="JUNE Logo" class="logo" />
+  <header>
+    <img src="Assets/J.U.N.E.ico" alt="J.U.N.E. Logo" class="logo" />
     <h1>J.U.N.E.</h1>
+    <p class="motto">Pro Ordine, Bellum Eternum</p>
     <nav>
-      <a href="#home" id="link-home">Home</a>
-      <a href="#news" id="link-news">News</a>
+      <button id="homeBtn" class="active">Home</button>
+      <button id="newsBtn">News</button>
     </nav>
   </header>
 
   <main>
-    <section id="home">
-      <h2>Motto</h2>
-      <p><em>“For Unity, Vigilance, and Global Security.”</em></p>
-      <p>J.U.N.E. is an elite Global intelligence agency dedicated to maintaining peace, countering threats, and advancing strategic research worldwide.</p>
+    <section id="homeSection" class="active">
+      <h2>About J.U.N.E.</h2>
+      <p>
+        The J.U.N.E. is an intelligence organisation committed to maintaining global order through vigilance, research, and strategic operations.
+      </p>
+      <p>
+        <strong>Motto:</strong> <em>Pro Ordine, Bellum Eternum</em> — "For Order, an Eternal War."
+      </p>
     </section>
 
-    <section id="news" style="display:none;">
-      <h2>World Intelligence Feed</h2>
-      <p>Select a country to view its latest national developments:</p>
-
-      <div class="country-selector">
-        <select id="country-select">
-          <option value="us">🇺🇸 United States</option>
-          <option value="in">🇮🇳 India</option>
-          <option value="gb">🇬🇧 United Kingdom</option>
-          <option value="ru">🇷🇺 Russia</option>
-          <option value="cn">🇨🇳 China</option>
-          <option value="de">🇩🇪 Germany</option>
-          <option value="fr">🇫🇷 France</option>
-          <option value="jp">🇯🇵 Japan</option>
-          <option value="ua">🇺🇦 Ukraine</option>
-          <option value="il">🇮🇱 Israel</option>
-          <option value="pk">🇵🇰 Pakistan</option>
-          <option value="ir">🇮🇷 Iran</option>
-        </select>
+    <section id="newsSection">
+      <h2>Global Defence & Research News</h2>
+      <div id="newsFeed" class="news-grid">
+        <p class="loading">Gathering latest defence intelligence reports...</p>
       </div>
-
-      <div id="news-list"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 J.U.N.E. Global Information Division | All Rights Reserved</p>
+    <p>© 2025 J.U.N.E. Global Information Desk</p>
   </footer>
 
   <script src="script.js"></script>
