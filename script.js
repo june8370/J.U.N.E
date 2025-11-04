@@ -1,5 +1,5 @@
 // ==================================================
-// J.U.N.E.
+// J.U.N.E. — Joint Unified National Elite
 // Official Website Script
 // ==================================================
 
@@ -29,16 +29,15 @@ function handleHash() {
 window.addEventListener("hashchange", handleHash);
 handleHash();
 
-// ---------------- Live Military News Feed ----------------
+// ---------------- Global Defence News Feed ----------------
 const NEWS_API_KEY = "9706b53ba74c4755bbdc9e5d1da8828c"; // ⚠️ Replace with your NewsAPI key
-const NEWS_QUERY = "military OR defence OR war OR armed forces OR army OR navy OR air force";
+const NEWS_QUERY = "defence OR defense OR military OR armed forces OR army OR navy OR air force OR war OR weapon OR conflict OR missile OR soldier OR global security";
 const NEWS_LANGUAGE = "en";
-const NEWS_PAGE_SIZE = 10; // number of news articles to load
+const NEWS_PAGE_SIZE = 12; // number of articles to display
 
-// Fetch and display the latest military news
-async function fetchLiveMilitaryNews() {
+async function fetchDefenceNews() {
   const container = document.getElementById("news-list");
-  container.innerHTML = `<p class="loading">Loading latest intelligence reports...</p>`;
+  container.innerHTML = `<p class="loading">Collecting latest defence intelligence from around the world...</p>`;
   
   try {
     const url = `https://newsapi.org/v2/everything?` +
@@ -57,28 +56,29 @@ async function fetchLiveMilitaryNews() {
         summary: a.description || "No summary available.",
         source: a.source.name || "Unknown Source",
         date: a.publishedAt ? new Date(a.publishedAt).toLocaleDateString() : "",
+        country: a.source.country || "Global",
         url: a.url
       })));
     } else {
-      container.innerHTML = `<p class="error">No military reports found at this moment.</p>`;
+      container.innerHTML = `<p class="error">No global defence reports available right now.</p>`;
       console.warn("News API response:", data);
     }
   } catch (err) {
-    console.error("Error fetching news:", err);
-    container.innerHTML = `<p class="error">Unable to retrieve latest reports. Please check your connection or API key.</p>`;
+    console.error("Error fetching defence news:", err);
+    container.innerHTML = `<p class="error">Unable to retrieve global reports. Check your connection or API key.</p>`;
   }
 }
 
-// Render the fetched news articles
+// Render articles into News page
 function renderNews(newsList) {
   const container = document.getElementById("news-list");
   container.innerHTML = "";
-  
+
   newsList.forEach(item => {
     const card = document.createElement("article");
     card.className = "news-item";
     card.innerHTML = `
-      <div class="meta">Military · ${escapeHtml(item.date)}</div>
+      <div class="meta">Global Defence · ${escapeHtml(item.date)}</div>
       <h3><a href="${item.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
       <p>${escapeHtml(item.summary)}</p>
       <div class="meta">Source: ${escapeHtml(item.source)}</div>
@@ -87,7 +87,7 @@ function renderNews(newsList) {
   });
 }
 
-// Escape potentially unsafe HTML
+// Simple text sanitizer
 function escapeHtml(str) {
   return (str || "").replace(/[&<>"']/g, c => ({
     "&": "&amp;",
@@ -99,10 +99,10 @@ function escapeHtml(str) {
 }
 
 // ---------------- Auto Refresh Mechanism ----------------
-// Fetch once immediately, then refresh every 10 minutes
-fetchLiveMilitaryNews();
-setInterval(fetchLiveMilitaryNews, 10 * 60 * 1000);
+// Fetch once now, then refresh every 10 minutes
+fetchDefenceNews();
+setInterval(fetchDefenceNews, 10 * 60 * 1000);
 
-// ---------------- Console Banner ----------------
-console.log("%cJ.U.N.E. Intelligence Division Online", "color: #004080; font-weight: bold;");
-console.log("%cMonitoring global military developments...", "color: gray;");
+// ---------------- Console Log ----------------
+console.log("%cJ.U.N.E. Global Intelligence Division Online", "color: #003366; font-weight: bold;");
+console.log("%cMonitoring world defence developments...", "color: gray;");
