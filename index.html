@@ -1,71 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>J.U.N.E.</title>
-  <meta name="description" content=" Official site of J.U.N.E.." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="seal">JUNE</div>
-      <div>
-        <h1>J.U.N.E.</h1>
-        <p>Pro Ordine, Bellum Eternum — Order Through Readiness</p>
-      </div>
+  <header class="site-header">
+    <div class="header-left">
+      <img src="c200687a-c07b-475a-ba6f-38000c3cfee4.png" alt="JUNE Logo" class="logo">
+      <h1>J.U.N.E.</h1>
     </div>
     <nav>
-      <a href="#home" class="nav-link" id="link-home">Home</a>
-      <a href="#news" class="nav-link" id="link-news">News</a>
+      <a href="#home" id="link-home">Home</a>
+      <a href="#news" id="link-news">News</a>
     </nav>
   </header>
 
-  <main id="app">
-    <!-- HOME -->
-    <section id="home" class="view">
-      <div class="hero">
-        <div>
-          <div class="motto">
-            <h2>J.U.N.E.</h2>
-            <p>An integrated agency dedicated to safeguarding national interests through intelligence, research, and coordination.</p>
-          </div>
-          <article class="intro">
-            <p><strong>Mission:</strong> To anticipate emerging threats and protect national stability through integrated intelligence and scientific advancement.</p>
-            <p><strong>Core Values:</strong> Integrity • Clarity • Preparedness • Scientific Rigor</p>
-          </article>
-        </div>
-
-        <aside class="stat-card">
-          <h4>Public Brief</h4>
-          <p>This site provides open information and curated military & research news relevant to global stability.</p>
-          <dl>
-            <div><dt>Founded</dt><dd>— 2025</dd></div>
-            <div><dt>Focus</dt><dd>— Strategic intelligence, defence research, and coordination</dd></div>
-            <div><dt>Contact</dt><dd>— None</dd></div>
-          </dl>
-        </aside>
-      </div>
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="page">
+      <h2>Agency Motto</h2>
+      <p class="motto">"For Order, Through Eternal Vigilance."</p>
+      <h3>Introduction</h3>
+      <p>
+        The <strong>J.U.N.E.</strong> is a covert global intelligence and defence agency dedicated to ensuring world stability. 
+        Through advanced research, field operations, and inter-agency coordination, J.U.N.E. monitors emerging threats to maintain balance and peace.
+      </p>
+      <p>
+        Established under the principles of unity, precision, and duty, J.U.N.E. remains at the forefront of intelligence strategy, defence innovation, and 
+        counter-espionage. Our mission: safeguard nations, preserve truth, and uphold order in a world of uncertainty.
+      </p>
     </section>
 
-    <!-- NEWS -->
-    <section id="news" class="view" style="display:none">
-      <header class="news-header">
-        <div>
-          <h2>World Military & Research News</h2>
-          <p>Curated global defence and science headlines.</p>
-        </div>
-      </header>
-
-      <div id="news-list" class="news-grid"></div>
-
-      <p class="note">* This is an open-source feed snapshot. Automated updates can be configured with an API key.</p>
+    <!-- News Section -->
+    <section id="news" class="page">
+      <h2>Global Defence News</h2>
+      <p class="subtitle">Live intelligence feed — world military and research developments</p>
+      <div id="news-list" class="news-container">
+        <!-- News articles will load here dynamically -->
+      </div>
     </section>
   </main>
 
   <footer>
-    © J.U.N.E. — Public Information Office • This page contains no restricted content.
+    <p>© 2025 J.U.N.E. Public Information Office</p>
   </footer>
 
   <script src="script.js"></script>
