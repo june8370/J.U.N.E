@@ -22,7 +22,7 @@ window.addEventListener("hashchange", () => showView(location.hash.replace("#", 
 showView(location.hash.replace("#", "") || "home");
 
 // ===================== GLOBAL NEWS FETCHER =====================
-const API_KEY = "2ea79460042b4496ab57b6a09b52b790"; // Replace with your NewsAPI key
+const API_KEY = "9706b53ba74c4755bbdc9e5d1da8828c"; // Replace with your NewsAPI key
 const NEWS_LIST = document.getElementById("news-list");
 const COUNTRY_SELECT = document.getElementById("country-select");
 
