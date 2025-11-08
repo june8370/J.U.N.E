@@ -11,11 +11,15 @@ body {
   line-height: 1.6;
 }
 
+/* --- Header --- */
 header {
   text-align: center;
   padding: 20px 10px;
   border-bottom: 2px solid #1a2733;
   background: #0f1922;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
@@ -36,6 +40,7 @@ header h1 {
   font-style: italic;
 }
 
+/* --- Navigation --- */
 nav {
   margin-top: 15px;
 }
@@ -57,6 +62,7 @@ nav button.active {
   color: #fff;
 }
 
+/* --- Sections --- */
 main {
   padding: 20px;
   max-width: 900px;
@@ -64,13 +70,19 @@ main {
 }
 
 section {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   display: none;
 }
 
 section.active {
   display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
+/* --- News Cards --- */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -91,14 +103,8 @@ section.active {
   transform: scale(1.02);
 }
 
-.news-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
 .news-content {
-  padding: 10px 14px;
+  padding: 14px;
 }
 
 .news-content h3 {
@@ -124,6 +130,29 @@ section.active {
   text-decoration: underline;
 }
 
+.meta {
+  font-size: 0.8em;
+  color: #99a5af;
+  margin-top: 6px;
+}
+
+/* --- Fade Animation --- */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Footer --- */
 footer {
   text-align: center;
   padding: 15px;
